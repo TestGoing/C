@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include "Dependence.h"
+#include "dependence.h"
 pthread_mutex_t mutex;
 
 void * print_msg( void * arg )

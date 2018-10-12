@@ -1,7 +1,13 @@
 cc=g++
 prom=T1
-source=T1.c Dependence.c
+deps=dependence.h
+obj=T1.o dependence.o
 
-$(prom):$(source)
-	$(cc) -o $(prom) $(source) -lpthread
+$(prom):$(obj)
+	$(cc) -o $(prom) $(obj) -lpthread
+
+T1.o:T1.c $(deps)
+	$(cc) -c T1.c
+dependence.o:$(dependence.c)
+	$(cc) -c dependence.c
 
