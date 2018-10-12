@@ -1,7 +1,8 @@
 cc=g++
 prom=T1
-deps=dependence.h
-obj=T1.o dependence.o
+deps=$(shell find ./ -name "*.h")
+src=$(shell find ./ -name "*.c")
+obj=$(src:%.c=%.o)
 
 $(prom):$(obj)
 	$(cc) -o $(prom) $(obj) -lpthread
