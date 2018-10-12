@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-
+#include "Dependence.h"
 pthread_mutex_t mutex;
 
 void * print_msg( void * arg )
@@ -21,6 +21,8 @@ int main( int argc, char const * argv[] )
 {
 	pthread_t id1;
 	pthread_t id2;
+
+	dependence_test();
 	pthread_mutex_init( &mutex, NULL );
 	pthread_create( &id1, NULL, print_msg, NULL );
 	pthread_create( &id2, NULL, print_msg, NULL );

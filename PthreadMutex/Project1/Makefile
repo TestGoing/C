@@ -1,2 +1,7 @@
-T1:T1.c
-	g++ -o T1 T1.c -lpthread
+cc=g++
+prom=T1
+source=T1.c Dependence.c
+
+$(prom):$(source)
+	$(cc) -o $(prom) $(source) -lpthread
+
